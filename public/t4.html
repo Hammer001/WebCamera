@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>video</title>
+</head>
+
+<body>
+    <video id="v" autoplay></video>
+    <script>
+        navigator.webkitGetUserMedia({
+                video: true
+            },
+            function(stream) {
+                document.getElementById("v").src = webkitURL.createObjectURL(stream);
+            },
+            function(error) {
+                console.log("不支持媒体流～ ", error);
+            });
+    </script>
+</body>
+
+</html>
